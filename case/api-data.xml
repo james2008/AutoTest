@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testcase>
     <!--参数校验查看日志-->
-    <case id="check1">
+	<!--测试入口，从登录开始获取到token-->
+	<case id="checklogin">
         <run>true</run>
         <method>post</method>
         <url>/Api/h5/user/p/login</url>
@@ -10,41 +11,15 @@
         <verify></verify>
         <save>token;uuid</save>
     </case>
+  <!--
     <case>
         <run>true</run>
         <method>post</method>
-        <url>/Api/h5/user/p/login</url>
-        <desc>校验信息-登录接口</desc>
-        <param>loginName=158013359651,pwd=</param>
-        <verify></verify>
-        <save>token;uuid</save>
-    </case>
-    <case>
-        <run>true</run>
-        <method>post</method>
-        <url>/Api/h5/user/p/login</url>
-        <desc>校验信息-登录接口</desc>
-        <param>loginName=1580133596511,pwd=4297f44b13955235245b2497399d7a93</param>
-        <verify></verify>
-        <save>token;uuid</save>
-    </case>
-    <case>
-        <run>true</run>
-        <method>post</method>
-        <url>/Api/h5/user/p/login</url>
-        <desc>校验信息-登录接口</desc>
-        <param>loginName=15801335965,pwd=4297f44b13955235245b2497399d7a93</param>
-        <verify></verify>
-        <save>token;uuid</save>
-    </case>
-    <case>
-        <run>true</run>
-        <method>post</method>
-        <url>/Api/h5/u/member/getMyAccount</url>
+        <url>接口地址url</url>
         <desc>用户信息接口</desc>
-        <param></param>
-        <verify></verify>
-        <save></save>
+        <param>请求参数</param>
+        <verify>断言信息</verify>
+        <save>请求返回参数</save>
     </case>
-
+-->
 </testcase>
