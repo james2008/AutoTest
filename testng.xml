@@ -11,36 +11,4 @@
             </class>
         </classes>
     </test>
-
-<!--    <test name="test1">-->
-<!--        <parameter name="myName" value="manisha"/>-->
-<!--        <classes>-->
-<!--            <class name="com.cn.bianlimt.app.test.ParameterizedTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test verbose="2" preserve-order="true" name="test3">-->
-<!--        <groups>-->
-<!--            <run>-->
-<!--                <include name="group1"></include>-->
-<!--                <include name="group2"></include>-->
-<!--                <include name="group3"></include>-->
-<!--            </run>-->
-<!--        </groups>-->
-<!--        <classes>-->
-<!--            <class name="com.cn.bianlimt.app.test.TestGroupCase"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="test4">-->
-<!--        <classes>-->
-<!--            <class name="com.cn.bianlimt.app.test.TestContent">-->
-<!--                <methods>-->
-<!--                    <include name="login"/>-->
-<!--                    <include name="test1"/>-->
-<!--                    <include name="test2"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>
