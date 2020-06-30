@@ -1,11 +1,12 @@
 # AutoTest
 
+
 #### 介绍
-接口自动化测试框架（java OkHttp3+ testNg）
+接口自动化测试框架（java + httpclient/OkHttp3 + testNg + xml）
 
 
 #### 环境
-OkHttp3+jsonpath+testng+ExtentReport(jdk8)
+idea+jdk8
 
 
 #### 运行
