@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>api_autotest</groupId>
+    <artifactId>api_autotest</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!--1.8.0_171-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8.0_171</maven.compiler.source>
+        <maven.compiler.target>1.8.0_171</maven.compiler.target>
+        <!--Maven自带时间戳使用${maven.build.timestamp}，但是时区是UTC-->
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+        <envName>api-config.xml</envName>
+        <xmlFileName>testng.xml</xmlFileName>
+    </properties>
+
+    <dependencies>
+        <!--junit4.12-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <!--fastjson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
+        <!--gson-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.6</version>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.alibaba</groupId>-->
+        <!--            <artifactId>fastjson</artifactId>-->
+        <!--            <version>1.1.41</version>-->
+        <!--        </dependency>-->
+        <!--gsonxml-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.stanfy</groupId>-->
+        <!--            <artifactId>gson-xml-java</artifactId>-->
+        <!--            <version>0.1.7</version>-->
+        <!--        </dependency>-->
+        <!--okio-->
+        <dependency>
+            <groupId>com.squareup.okio</groupId>
+            <artifactId>okio</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+        <!--httpclient-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.10</version>
+        </dependency>
+        <!--okhttp-->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.14.3</version>
+        </dependency>
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+        </dependency>
+        <!--logback-core:核心代码模块-->
+        <!--这个依赖直接包含了 logback-core 以及 slf4j-api的依赖-->
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.26</version>
+        </dependency>
+        <!--logback-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <!--reportng-->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>reportng</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <!--解析xml用-->
+        <!--        <dependency>-->
+        <!--            <groupId>commons-io</groupId>-->
+        <!--            <artifactId>commons-io</artifactId>-->
+        <!--            <version>2.4</version>-->
+        <!--        </dependency>-->
+        <!--解析xml用-->
+        <!--allure-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.qameta.allure</groupId>-->
+        <!--            <artifactId>allure-testng</artifactId>-->
+        <!--            <version>2.12.1</version>-->
+        <!--        </dependency>-->
+        <!--allure的testng插件-->
+        <!--        <dependency>-->
+        <!--            <groupId>ru.yandex.qatools.allure</groupId>-->
+        <!--            <artifactId>allure-testng-adaptor</artifactId>-->
+        <!--            <version>1.5.2</version>-->
+        <!--        </dependency>-->
+
+    </dependencies>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.6</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.5</version>
+                    <configuration>
+                        <systemProperties>
+                            <envName>${envName}</envName>
+                        </systemProperties>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>${xmlFileName}</suiteXmlFile>
+                        </suiteXmlFiles>
+                        <testFailureIgnore>true</testFailureIgnore>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.0.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.7.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+                <!--Maven自带时间戳使用${maven.build.timestamp}，但是时区是UTC时间格式,使用GMT+8，插件提供支持-->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.9.1</version>
+                    <executions>
+                        <execution>
+                            <id>timestamp-property</id>
+                            <goals>
+                                <goal>timestamp-property</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <name>maven.build.timestamp</name>
+                        <pattern>yyyyMMddHHmmss</pattern>
+                        <timeZone>GMT+8</timeZone>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    <!--allure的report插件，生成html报告,配置case以及bug地址-->
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>ru.yandex.qatools.allure</groupId>
+                <artifactId>allure-maven-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <!--生成报告所需result源文件目录-->
+                    <resultsDirectory>./${maven.build.timestamp}/allure-results</resultsDirectory>
+                    <!--@Issue以及@TestCaseId中的链接配置，%s为id占位符-->
+                    <properties>
+                        <allure.issues.tracker.pattern>http://122.225.68.74:8082/browse/%s
+                        </allure.issues.tracker.pattern>
+                        <allure.tests.management.pattern>http://122.225.68.74:8082/browse/%s
+                        </allure.tests.management.pattern>
+                    </properties>
+                </configuration>
+            </plugin>
+        </plugins>
+        <!--设置site目录-->
+        <outputDirectory>/testng-report/${project.basedir}/${maven.build.timestamp}/report</outputDirectory>
+    </reporting>
+</project>

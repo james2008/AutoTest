@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="接口自动化测试" verbose="1" preserve-order="true" parallel="false">
+    <test name="自动化测试用例">
+        <parameter name="xmlPath" value="case/api-data.xml"></parameter>
+        <classes>
+            <class name="com.cn.api.app.test.test.TestCaseDemo">
+                <methods>
+                    <include name="apiTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--    <test name="test1">-->
+<!--        <parameter name="myName" value="manisha"/>-->
+<!--        <classes>-->
+<!--            <class name="com.cn.bianlimt.app.test.ParameterizedTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test verbose="2" preserve-order="true" name="test3">-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="group1"></include>-->
+<!--                <include name="group2"></include>-->
+<!--                <include name="group3"></include>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
+<!--            <class name="com.cn.bianlimt.app.test.TestGroupCase"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="test4">-->
+<!--        <classes>-->
+<!--            <class name="com.cn.bianlimt.app.test.TestContent">-->
+<!--                <methods>-->
+<!--                    <include name="login"/>-->
+<!--                    <include name="test1"/>-->
+<!--                    <include name="test2"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
